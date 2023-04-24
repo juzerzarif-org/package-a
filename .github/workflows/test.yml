@@ -11,7 +11,7 @@ jobs:
       with:
         milton-secrets: ${{ secrets.MILTON_SECRETS }}
         permissions: |
-          content:read
+          contents:read
           organization_packages:read
 
     - uses: actions/checkout@v3
