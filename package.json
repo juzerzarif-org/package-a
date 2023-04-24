@@ -1,0 +1,23 @@
+{
+  "name": "@juzerzarif-org/package-a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juzerzarif-org/package-a.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juzerzarif-org/package-a/issues"
+  },
+  "homepage": "https://github.com/juzerzarif-org/package-a#readme",
+  "dependencies": {
+    "@juzerzarif-org/package-b": "1.0.0"
+  }
+}

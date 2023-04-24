@@ -1,0 +1,30 @@
+name: Test
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: juzerzarif-org/action-milton-auth@main
+      id: milton-auth
+      with:
+        milton-secrets: ${{ secrets.MILTON_SECRETS }}
+        permissions: |
+          content:read
+          organization_packages:read
+
+    - uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+    
+    - uses: actions/setup-node@v3
+      with:
+        scope: '@juzerzarif-org'
+        registry-url: 'https://npm.pkg.github.com'
+
+    - name: Install dependencies
+      env: 
+        NODE_AUTH_TOKEN: ${{ steps.milton-auth.outputs.token }}
+      run: npm install
+    
